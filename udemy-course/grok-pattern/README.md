@@ -58,7 +58,11 @@ Start the file
     logstash -f /mylogstash/config-dir/pipelines.conf --config.reload.automatic
 
 ### To reparse the doc from the beginning:
-     find / -type f -name '.sincedb*'
+     find /var -type f -name '.sincedb*'
     /var/lib/logstash/plugins/inputs/file/.sincedb_658cd31618ac77269fa793d90b42085f
+
+Remove the file
+    
+    rm  `find /var -type f -name '.sincedb*'`
 
 now, the data file will be reparsed.

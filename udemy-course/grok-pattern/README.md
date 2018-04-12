@@ -33,23 +33,27 @@ cat Dockerfile
 
     FROM logstash
     
-    RUN apt update && apt install vim
-    RUN mkdir /config-dir
-    RUN mkdir /data
-    COPY apache_access.log /data/apache_access.log
-    COPY pipelines.conf /config-dir/pipelines.conf
-        
+    RUN apt update && apt install vim -y
+    RUN mkdir -p /mylogstash/config-dir
+    RUN mkdir /mylogstash/data
+    
     #CMD ["-f", "/some/config-dir/logstash.conf"]
+
 
 ### Build the image
 
     docker build -t mylogstach .
 
-### start the container console 
+### Run container console 
 
-    docker run -ti --name logstash --hostname logstash mylogstach bash
+    cat start.sh 
+    docker run -ti --rm --name logstash --hostname logstash -v "$PWD"/config-dir:/mylogstash/config-dir -v "$PWD"/data:/mylogstash/data mylogstach bash
 
-### start logstash with the correct pipeline file
+Start the file
+
+    bash start.sh
+
+### Start logstash with the correct pipeline file
 
     logstash -f /config-dir/pipelines.conf --config.reload.automatic
 

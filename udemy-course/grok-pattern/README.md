@@ -55,7 +55,7 @@ Start the file
 
 ### Start logstash with the correct pipeline file
 
-    logstash -f /config-dir/pipelines.conf --config.reload.automatic
+    logstash -f /mylogstash/config-dir/pipelines.conf --config.reload.automatic
 
 ### To reparse the doc from the beginning:
      find / -type f -name '.sincedb*'

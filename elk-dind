@@ -1,0 +1,102 @@
+######## References
+
+https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/how-to-run-elk-stack-on-docker-container.html
+
+
+
+docker run --privileged --name ELK --hostname ELK  -d --network=swarmnet0  docker:stable-dind 
+
+
+
+######## TODO
+- automate ELK installation & running in the dind
+- collect Cisco logs with ELK
+- Visualize
+
+
+###### Elasticsearch
+
+docker run --privileged --name elk-aio --hostname elk-aio -d docker:stable-dind 
+
+==> mount ELK directories used by E, L, K to localhost
+
+
+docker exec -ti elk-aio /bin/ash
+
+
+apk update && apk add curl
+mkdir /esdata
+docker run -d --name elasticsearch  -p 9200:9200 -p 9300:9300 -v /esdata:/usr/share/elasticsearch/data elasticsearch
+
+
+
+/ # curl -X GET http://localhost:9200
+{
+  "name" : "UYgx2qj",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "R3oAhKcMRgizbgBKAMRT9A",
+  "version" : {
+    "number" : "5.6.8",
+    "build_hash" : "688ecce",
+    "build_date" : "2018-02-16T16:46:30.010Z",
+    "build_snapshot" : false,
+    "lucene_version" : "6.6.1"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+###### logstash
+
+mkdir logstash
+vi logstash/logstash.conf
+
+input {
+ beats {
+ port => 5044
+ }
+ }
+filter {
+if [type] == "syslog" {
+    grok {
+      match => { "message" => "%{SYSLOGLINE}" }
+    }
+
+    date {
+match => [ "timestamp", "MMM  d HH:mm:ss", "MMM dd HH:mm:ss" ]
+}
+  }
+
+}
+output {
+ elasticsearch {
+  hosts => ["elasticsearch:9200"] 
+    index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
+       }
+stdout {
+    codec => rubydebug
+       }
+}
+
+
+
+docker run -d --name logstash -p 5044:5044 --link elasticsearch:elasticsearch -v "$PWD":/data/logstash logstash -f /data/logstash/logstash.conf
+
+
+###### Kibana
+
+docker run --name kibana --link elasticsearch:elasticsearch -p 5601:5601 -d kibana
+
+docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                                            NAMES
+2128b11193ca        kibana              "/docker-entrypoint.…"   12 seconds ago       Up 10 seconds       0.0.0.0:5601->5601/tcp                           kibana
+8e3237be39ff        logstash            "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:5044->5044/tcp                           logstash
+6763233e1950        elasticsearch       "/docker-entrypoint.…"   7 minutes ago        Up 7 minutes        0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp   elasticsearch
+
+
+
+------------- install filebeat
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+sudo apt-get install apt-transport-https
+echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+sudo apt-get update && sudo apt-get install filebeat
+sudo update-rc.d filebeat defaults 95 10

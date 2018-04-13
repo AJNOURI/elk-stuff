@@ -15,10 +15,17 @@
     }
     filter {
         grok {
-            #match => {"message" => "%{IP:ip_address} %{USER:identity} %{USER:auth} \[%{HTTPDATE:req_ts}\] \"%{WORD:http_verb} %{URIPATHPARAM:req_path}\""}
-            match => { "message" => "%{COMBINEDAPACHELOG}"  }
+            #match => {"message" => "%{IP:ip_address} %{USER:identity} %{USER:auth} \[%{HTTPDATE:req_ts}\] \"%{WORD:http_verb} %{URIPATHPARAM:req_path}\\" %{INT:http_status}"}
+    	    match => { "message" => '%{HTTPD_COMMONLOG} "%{GREEDYDATA:referrer}" "%{GREEDYDATA:agent}"' }
         }
-    }    
+
+    mutate {
+        convert => {
+            "response" => "integer"
+            "bytes" => "integer"
+        }
+        }
+    }
     output {
         stdout {
                 codec => rubydebug

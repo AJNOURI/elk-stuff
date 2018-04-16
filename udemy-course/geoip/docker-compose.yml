@@ -1,0 +1,14 @@
+version: '3'
+services:
+    mylogstash:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - ./config-dir:/mylogstash/config-dir:rw
+            - ./data:/mylogstash/data:rw
+        ports:
+            - "5000:5000"
+            - "8080:8080"
+        tty: true
+        command: ["bash"]

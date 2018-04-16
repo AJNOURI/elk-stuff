@@ -1,0 +1,49 @@
+input {
+    file {
+        path => "/mylogstash/data/apache_*.log"
+        start_position => "beginning"
+    }
+    http {
+
+    }
+}
+filter {
+    if [headers][request_uri] =~ "error" {
+    	mutate {
+		replace => { type => "error"  }
+	}
+    } else {
+	mutate {
+		replace => { type => "access"  }
+	}
+	grok {
+    		match => { "message" => 'test %{HTTPD_COMMONLOG} "%{GREEDYDATA:referrer}" "%{GREEDYDATA:agent}"' }
+    	}		
+        
+	if "_grokparsefailure" in [tags] {
+		drop {}
+	}        
+
+    	mutate {
+        	convert => {
+            		"response" => "integer"
+            		"bytes" => "integer"
+        	}
+    	}	
+    	date {
+        	match => ["timestamp","dd/MMM/yyyy:HH:mm:ss Z" ]
+        	remove_field => [ "timestamp" ]
+    	}
+    }	
+}
+    
+
+output {
+    stdout {
+        codec => rubydebug
+    }
+    file {
+        path => "/mylogstash/data/%{type}_%{+yyyy_MM_dd}.log"
+        #path => "access.log"
+    }
+}

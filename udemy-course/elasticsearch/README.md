@@ -57,4 +57,7 @@ Now access logstash container and start logstash:
 ```
 logstash -f /mylogstash/config-dir/pipelines.conf --config.reload.automatic
 ```
+![kibana - google chrome_001_17_04](https://user-images.githubusercontent.com/1716020/38841762-4adebd7a-41e6-11e8-8392-95797e5a4680.jpg)
+![os count - kibana - google chrome_003_17_04](https://user-images.githubusercontent.com/1716020/38841766-4de31570-41e6-11e8-9356-579c3590600e.jpg)
+![apache_geoip locations - kibana - google chrome_004_17_04](https://user-images.githubusercontent.com/1716020/38841767-51320498-41e6-11e8-9e46-9279fc2cfbf4.jpg)
 

@@ -1,0 +1,29 @@
+version: '3'
+services:
+    elasticsearch:
+        image: elasticsearch
+        ports:
+            - "9200:9200"
+            - "9300:9300"
+        volumes:
+            - ./data:/usr/share/elasticsearch/data
+    mylogstash:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - ./config-dir:/mylogstash/config-dir:rw
+            - ./data:/mylogstash/data:rw
+        ports:
+            - "5000:5000"
+            - "8080:8080"
+        tty: true
+        command: ["bash"]
+        links:
+            - elasticsearch
+    kibana:
+        image: kibana
+        ports:
+            - "5601:5601"
+        links:
+            - elasticsearch

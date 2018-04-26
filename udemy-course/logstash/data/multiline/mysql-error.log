@@ -1,0 +1,165 @@
+160620 16:26:27 mysqld_safe Starting mysqld daemon with databases from /apps/data/mysqld
+160620 16:26:27 mysqld_safe WSREP: Running position recovery with --log_error='/apps/data/mysqld/wsrep_recovery.pkZjPK' --pid-file='/apps/data/mysqld/hostname-recover.pid'
+2016-06-20 16:26:27 140000013072416 [Note] /usr/sbin/mysqld (mysqld 10.1.14-MariaDB) starting as process 30564 ...
+160620 16:26:30 mysqld_safe WSREP: Recovered position 42aa6c8c-36f4-11e6-a819-6e0b77631dfc:167
+2016-06-20 16:26:30 139922880231456 [Note] /usr/sbin/mysqld (mysqld 10.1.14-MariaDB) starting as process 30608 ...
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: Read nil XID from storage engines, skipping position init
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: wsrep_load(): loading provider library '/usr/lib64/galera/libgalera_smm.so'
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: wsrep_load(): Galera 25.3.15(r3578) by Codership Oy <info@codership.com> loaded successfully.
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: CRC-32C: using hardware acceleration.
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: Found saved state: 42aa6c8c-36f4-11e6-a819-6e0b77631dfc:167
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: Passing config to GCS: base_dir = /apps/data/mysqld/; base_host = 10.90.2.201; base_port = 4567; cert.log_conflicts = no; debug = no; evs.auto_evict = 0; evs.delay_margin = PT1S; evs.delayed_keep_period = PT30S; evs.inactive_check_period = PT0.5S; evs.inactive_timeout = PT15S; evs.join_retrans_period = PT1S; evs.max_install_timeouts = 3; evs.send_window = 4; evs.stats_report_period = PT1M; evs.suspect_timeout = PT5S; evs.user_send_window = 2; evs.view_forget_timeout = PT24H; gcache.dir = /apps/data/mysqld/; gcache.keep_pages_size = 0; gcache.mem_size = 0; gcache.name = /apps/data/mysqld//galera.cache; gcache.page_size = 128M; gcache.size = 128M; gcs.fc_debug = 0; gcs.fc_factor = 1.0; gcs.fc_limit = 16; gcs.fc_master_slave = no; gcs.max_packet_size = 64500; gcs.max_throttle = 0.25; gcs.recv_q_hard_limit = 9223372036854775807; gcs.recv_q_soft_limit = 0.25; gcs.sync_donor = no; gmcast.segment = 0; gmcast.version = 0; pc.announce_timeout = PT3S; pc.checksum = false; pc.ignore_quorum = false; pc.ignore_sb 
+2016-06-20 16:26:30 139922387404544 [Note] WSREP: Service thread queue flushed.
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: Assign initial position for certification: 167, protocol version: -1
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: wsrep_sst_grab()
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: Start replication
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: Setting initial position to 42aa6c8c-36f4-11e6-a819-6e0b77631dfc:167
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: protonet asio version 0
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: Using CRC-32C for message checksums.
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: initializing ssl context
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: backend: asio
+2016-06-20 16:26:30 139922880231456 [Warning] WSREP: access file(/apps/data/mysqld//gvwstate.dat) failed(No such file or directory)
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: restore pc from disk failed
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: GMCast version 0
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: (5d0e74c4, 'ssl://0.0.0.0:4567') listening at ssl://0.0.0.0:4567
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: (5d0e74c4, 'ssl://0.0.0.0:4567') multicast: , ttl: 1
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: EVS version 0
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: gcomm: connecting to group 'preproduction', peer 'host01:,host02:,host03:'
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: SSL handshake successful, remote endpoint ssl://10.90.2.201:55422 local endpoint ssl://10.90.2.201:4567 cipher: AES128-SHA compression: 
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: SSL handshake successful, remote endpoint ssl://10.90.2.201:4567 local endpoint ssl://10.90.2.201:55422 cipher: AES128-SHA compression: 
+2016-06-20 16:26:30 139922880231456 [Warning] WSREP: (5d0e74c4, 'ssl://0.0.0.0:4567') address 'ssl://10.90.2.201:4567' points to own listening address, blacklisting
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: SSL handshake successful, remote endpoint ssl://10.90.2.200:4567 local endpoint ssl://10.90.2.201:50191 cipher: AES128-SHA compression: 
+2016-06-20 16:26:30 139922880231456 [Note] WSREP: (5d0e74c4, 'ssl://0.0.0.0:4567') turning message relay requesting on, nonlive peers: 
+2016-06-20 16:26:31 139922880231456 [Note] WSREP: declaring 464b3e16 at ssl://10.90.2.200:4567 stable
+2016-06-20 16:26:31 139922880231456 [Note] WSREP: Node 464b3e16 state prim
+2016-06-20 16:26:31 139922880231456 [Note] WSREP: view(view_id(PRIM,464b3e16,28) memb {
+	464b3e16,0
+	5d0e74c4,0
+} joined {
+} left {
+} partitioned {
+})
+2016-06-20 16:26:31 139922880231456 [Note] WSREP: save pc into disk
+2016-06-20 16:26:31 139922880231456 [Note] WSREP: discarding pending addr without UUID: ssl://10.90.2.199:4567
+2016-06-20 16:26:31 139922880231456 [Note] WSREP: gcomm: connected
+2016-06-20 16:26:31 139922880231456 [Note] WSREP: Changing maximum packet size to 64500, resulting msg size: 32636
+2016-06-20 16:26:31 139922880231456 [Note] WSREP: Shifting CLOSED -> OPEN (TO: 0)
+2016-06-20 16:26:31 139922880231456 [Note] WSREP: Opened channel 'preproduction'
+2016-06-20 16:26:31 139922880231456 [Note] WSREP: Waiting for SST to complete.
+2016-06-20 16:26:31 139922314880768 [Note] WSREP: New COMPONENT: primary = yes, bootstrap = no, my_idx = 1, memb_num = 2
+2016-06-20 16:26:31 139922314880768 [Note] WSREP: STATE EXCHANGE: Waiting for state UUID.
+2016-06-20 16:26:31 139922314880768 [Note] WSREP: STATE EXCHANGE: sent state msg: 5d92c79c-36fb-11e6-9b6d-3b3ebabc3369
+2016-06-20 16:26:31 139922314880768 [Note] WSREP: STATE EXCHANGE: got state msg: 5d92c79c-36fb-11e6-9b6d-3b3ebabc3369 from 0 (db2.preproduction.company.com)
+2016-06-20 16:26:31 139922314880768 [Note] WSREP: STATE EXCHANGE: got state msg: 5d92c79c-36fb-11e6-9b6d-3b3ebabc3369 from 1 (db3.preproduction.company.com)
+2016-06-20 16:26:31 139922314880768 [Note] WSREP: Quorum results:
+	version    = 3,
+	component  = PRIMARY,
+	conf_id    = 25,
+	members    = 2/2 (joined/total),
+	act_id     = 167,
+	last_appl. = -1,
+	protocols  = 0/7/3 (gcs/repl/appl),
+	group UUID = 42aa6c8c-36f4-11e6-a819-6e0b77631dfc
+2016-06-20 16:26:31 139922314880768 [Note] WSREP: Flow-control interval: [23, 23]
+2016-06-20 16:26:31 139922314880768 [Note] WSREP: Restored state OPEN -> JOINED (167)
+2016-06-20 16:26:31 139922291813120 [Note] WSREP: New cluster view: global state: 42aa6c8c-36f4-11e6-a819-6e0b77631dfc:167, view# 26: Primary, number of nodes: 2, my index: 1, protocol version 3
+2016-06-20 16:26:31 139922880231456 [Note] WSREP: SST complete, seqno: 167
+2016-06-20 16:26:31 139922880231456 [Note] Using unique option prefix 'myisam-recover' is error-prone and can break in the future. Please use the full name 'myisam-recover-options' instead.
+2016-06-20 16:26:31 139922314880768 [Note] WSREP: Member 1.0 (db3.preproduction.company.com) synced with group.
+2016-06-20 16:26:31 139922314880768 [Note] WSREP: Shifting JOINED -> SYNCED (TO: 167)
+2016-06-20 16:26:31 7f4255927820 InnoDB: Warning: Using innodb_locks_unsafe_for_binlog is DEPRECATED. This option may be removed in future releases. Please use READ COMMITTED transaction isolation level instead, see http://dev.mysql.com/doc/refman/5.6/en/set-transaction.html.
+2016-06-20 16:26:31 139922880231456 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+2016-06-20 16:26:31 139922880231456 [Note] InnoDB: The InnoDB memory heap is disabled
+2016-06-20 16:26:31 139922880231456 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+2016-06-20 16:26:31 139922880231456 [Note] InnoDB: Memory barrier is not used
+2016-06-20 16:26:31 139922880231456 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2016-06-20 16:26:31 139922880231456 [Note] InnoDB: Using Linux native AIO
+2016-06-20 16:26:31 139922880231456 [Note] InnoDB: Using SSE crc32 instructions
+2016-06-20 16:26:31 139922880231456 [Note] InnoDB: Initializing buffer pool, size = 2.0G
+2016-06-20 16:26:31 139922880231456 [Note] InnoDB: Completed initialization of buffer pool
+2016-06-20 16:26:31 139922880231456 [Note] InnoDB: Highest supported file format is Barracuda.
+2016-06-20 16:26:32 139922880231456 [Note] InnoDB: 128 rollback segment(s) are active.
+2016-06-20 16:26:32 139922880231456 [Note] InnoDB: Waiting for purge to start
+2016-06-20 16:26:32 139922880231456 [Note] InnoDB:  Percona XtraDB (http://www.percona.com) 5.6.29-76.2 started; log sequence number 15792181
+2016-06-20 16:26:32 139919475312384 [Note] InnoDB: Dumping buffer pool(s) not yet started
+2016-06-20 16:26:32 139922880231456 [Note] InnoDB: Creating #1 thread id 139919443842816 total threads 4.
+2016-06-20 16:26:32 139922880231456 [Note] InnoDB: Creating #2 thread id 139919433352960 total threads 4.
+2016-06-20 16:26:32 139922880231456 [Note] InnoDB: Creating #3 thread id 139919422863104 total threads 4.
+2016-06-20 16:26:32 139922880231456 [Note] InnoDB: Creating #4 thread id 139919412373248 total threads 4.
+2016-06-20 16:26:32 139922880231456 [Note] Plugin 'FEEDBACK' is disabled.
+2016-06-20 16:26:32 139922880231456 [Note] Using encryption key id 2 for temporary files
+2016-06-20 16:26:32 139922880231456 [Note] Server socket created on IP: '::'.
+2016-06-20 16:26:32 139922880231456 [Note] /usr/sbin/mysqld: ready for connections.
+Version: '10.1.14-MariaDB'  socket: '/var/lib/mysql/mysql.sock'  port: 3306  MariaDB Server
+2016-06-20 16:26:32 139922291813120 [Note] WSREP: wsrep_notify_cmd is not defined, skipping notification.
+2016-06-20 16:26:32 139922291813120 [Note] WSREP: REPL Protocols: 7 (3, 2)
+2016-06-20 16:26:32 139922387404544 [Note] WSREP: Service thread queue flushed.
+2016-06-20 16:26:32 139922291813120 [Note] WSREP: Assign initial position for certification: 167, protocol version: 3
+2016-06-20 16:26:32 139922387404544 [Note] WSREP: Service thread queue flushed.
+2016-06-20 16:26:32 139922291813120 [Note] WSREP: Synchronized with group, ready for connections
+2016-06-20 16:26:32 139922291813120 [Note] WSREP: wsrep_notify_cmd is not defined, skipping notification.
+2016-06-20 16:26:34 139922325370624 [Note] WSREP: (5d0e74c4, 'ssl://0.0.0.0:4567') turning message relay requesting off
+2016-06-20 16:28:42 139919390784256 [ERROR] mysqld: Error writing file '/apps/data/mysqld/mysql-bin' (errno: 0 "Internal error/check (Not system error)")
+2016-06-20 16:28:42 139919390784256 [ERROR] WSREP: FSM: no such a transition COMMITTING -> ROLLED_BACK
+160620 16:28:42 [ERROR] mysqld got signal 6 ;
+This could be because you hit a bug. It is also possible that this binary
+or one of the libraries it was linked against is corrupt, improperly built,
+or misconfigured. This error can also be caused by malfunctioning hardware.
+
+To report this bug, see https://mariadb.com/kb/en/reporting-bugs
+
+We will try our best to scrape up some info that will hopefully help
+diagnose the problem, but since we have already crashed, 
+something is definitely wrong and this may fail.
+
+Server version: 10.1.14-MariaDB
+key_buffer_size=33554432
+read_buffer_size=131072
+max_used_connections=1
+max_threads=502
+thread_count=3
+It is possible that mysqld could use up to 
+key_buffer_size + (read_buffer_size + sort_buffer_size)*max_threads = 1135382 K  bytes of memory
+Hope that's ok; if not, decrease some variables in the equation.
+
+Thread pointer: 0x0x7f419025f008
+Attempting backtrace. You can use the following information to find out
+where mysqld died. If you see no messages after this, something went
+terribly wrong...
+stack_bottom = 0x7f418595b140 thread_stack 0x48400
+/usr/sbin/mysqld(my_print_stacktrace+0x2b)[0x7f42563ad97b]
+/usr/sbin/mysqld(handle_fatal_signal+0x475)[0x7f4255f0c825]
+/lib64/libpthread.so.0(+0x32d920f7e0)[0x7f42555117e0]
+/lib64/libc.so.6(gsignal+0x35)[0x7f42539385e5]
+/lib64/libc.so.6(abort+0x175)[0x7f4253939dc5]
+/usr/lib64/galera/libgalera_smm.so(_ZN6galera3FSMINS_9TrxHandle5StateENS1_10TransitionENS_10EmptyGuardENS_11EmptyActionEE8shift_toES2_+0x180)[0x7f42405559f0]
+mysys/stacktrace.c:247(my_print_stacktrace)[0x7f424054940e]
+sql/signal_handler.cc:160(handle_fatal_signal)[0x7f424055c1bd]
+sql/wsrep_hton.cc:257(wsrep_rollback)[0x7f4255ea923a]
+sql/wsrep_hton.cc:268(wsrep_rollback)[0x7f4255ea9368]
+sql/handler.cc:1658(ha_rollback_trans(THD*, bool))[0x7f4255f0f41a]
+sql/handler.cc:1483(ha_commit_trans(THD*, bool))[0x7f4255f0f804]
+sql/transaction.cc:435(trans_commit_stmt(THD*))[0x7f4255e6f258]
+/usr/sbin/mysqld(_Z21mysql_execute_commandP3THD+0xb7c)[0x7f4255d9a1bc]
+sql/sql_class.h:3332(THD::get_stmt_da())[0x7f4255da28fd]
+sql/sql_parse.cc:7138(wsrep_mysql_parse)[0x7f4255da29fc]
+sql/sql_parse.cc:1484(dispatch_command(enum_server_command, THD*, char*, unsigned int))[0x7f4255da4f3e]
+sql/sql_parse.cc:1109(do_command(THD*))[0x7f4255da5b0b]
+sql/sql_connect.cc:1350(do_handle_one_connection(THD*))[0x7f4255e6169f]
+sql/sql_connect.cc:1264(handle_one_connection)[0x7f4255e617f7]
+/lib64/libpthread.so.0(+0x32d9207aa1)[0x7f4255509aa1]
+/lib64/libc.so.6(clone+0x6d)[0x7f42539eeaad]
+
+Trying to get some variables.
+Some pointers may be invalid and cause the dump to abort.
+Query (0x7f4231c9f020): is an invalid pointer
+Connection ID (thread ID): 7
+Status: NOT_KILLED
+
+Optimizer switch: index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,index_merge_sort_intersection=off,engine_condition_pushdown=off,index_condition_pushdown=on,derived_merge=on,derived_with_keys=on,firstmatch=on,loosescan=on,materialization=on,in_to_exists=on,semijoin=on,partial_match_rowid_merge=on,partial_match_table_scan=on,subquery_cache=on,mrr=off,mrr_cost_based=off,mrr_sort_keys=off,outer_join_with_cache=on,semijoin_with_cache=on,join_cache_incremental=on,join_cache_hashed=on,join_cache_bka=on,optimize_join_buffer_size=off,table_elimination=on,extended_keys=on,exists_to_in=on
+
+The manual page at http://dev.mysql.com/doc/mysql/en/crashing.html contains
+information that should help you find out what is causing the crash.
+160620 16:28:42 mysqld_safe Number of processes running now: 0
+160620 16:28:42 mysqld_safe WSREP: not restarting wsrep node automatically
+160620 16:28:42 mysqld_safe mysqld from pid file /apps/data/mysqld/hostname.pid ended

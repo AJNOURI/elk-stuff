@@ -1,0 +1,232 @@
+[25-Aug-2017 12:34:34 UTC] WordPress database error Unknown column 'resolution' in 'field list' for query 
+			INSERT IGNORE INTO wp_slim_stats (resolution, screen_width, screen_height, plugins, server_latency, page_performance, dt, other_ip, ip, content_type, resource, language, country, browser, browser_version, browser_type, platform, user_agent, visit_id)
+			VALUES ('1215x940','1829','1143','flash,java','89','932','1503664474','','79.97.72.88','home','/','en-us','xx','Default Browser','0','0','win10','Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko','709') made by do_action('wp_ajax_nopriv_slimtrack'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, wp_slimstat::slimtrack_ajax, wp_slimstat::slimtrack, wp_slimstat::insert_row
+[25-Aug-2017 12:34:34 UTC] WordPress database error Unknown column 'resolution' in 'field list' for query 
+			INSERT IGNORE INTO wp_slim_stats (resolution, screen_width, screen_height, plugins, server_latency, page_performance, dt, other_ip, ip, content_type, resource, language, country, browser, browser_version, browser_type, platform, user_agent, visit_id, id)
+			VALUES ('1215x940','1829','1143','flash,java','89','932','1503664474','','79.97.72.88','home','/','en-us','xx','Default Browser','0','0','win10','Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko','709','0') made by do_action('wp_ajax_nopriv_slimtrack'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, wp_slimstat::slimtrack_ajax, wp_slimstat::slimtrack, wp_slimstat::insert_row
+[25-Aug-2017 12:38:25 UTC] WordPress database error Unknown column 'resolution' in 'field list' for query 
+			INSERT IGNORE INTO wp_slim_stats (resolution, screen_width, screen_height, plugins, server_latency, page_performance, dt, other_ip, ip, content_type, resource, language, country, browser, browser_version, browser_type, platform, user_agent, visit_id)
+			VALUES ('1215x940','1829','1143','flash,java','184','1304','1503664705','','79.97.72.88','home','/','en-us','xx','Default Browser','0','0','win10','Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko','710') made by do_action('wp_ajax_nopriv_slimtrack'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, wp_slimstat::slimtrack_ajax, wp_slimstat::slimtrack, wp_slimstat::insert_row
+[25-Aug-2017 12:38:25 UTC] WordPress database error Unknown column 'resolution' in 'field list' for query 
+			INSERT IGNORE INTO wp_slim_stats (resolution, screen_width, screen_height, plugins, server_latency, page_performance, dt, other_ip, ip, content_type, resource, language, country, browser, browser_version, browser_type, platform, user_agent, visit_id, id)
+			VALUES ('1215x940','1829','1143','flash,java','184','1304','1503664705','','79.97.72.88','home','/','en-us','xx','Default Browser','0','0','win10','Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko','710','0') made by do_action('wp_ajax_nopriv_slimtrack'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, wp_slimstat::slimtrack_ajax, wp_slimstat::slimtrack, wp_slimstat::insert_row
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT id, ip, other_ip, username, country, referer, resource, searchterms, plugins, notes, visit_id, server_latency, page_performance, browser, browser_version, browser_type, platform, language, user_agent, resolution, screen_width, screen_height, content_type, category, author, content_id, outbound_resource, dt_out, dt
+			FROM wp_slim_stats
+			WHERE 1=1 AND dt BETWEEN 1501072727 AND 1503664727
+			ORDER BY dt DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::show_activity_log, include('/plugins/wp-slimstat/admin/view/right-now.php'), wp_slimstat_db::get_recent, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT dt, COUNT( ip ) first_metric, COUNT( DISTINCT ip ) second_metric
+			FROM wp_slim_stats
+			WHERE 1=1 AND dt BETWEEN 1501072727 AND 1503664727 
+			GROUP BY MONTH(CONVERT_TZ(FROM_UNIXTIME(dt), @@session.time_zone, '+00:00')), DAY(CONVERT_TZ(FROM_UNIXTIME(dt), @@session.time_zone, '+00:00')) made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::show_chart, wp_slimstat_db::get_data_for_chart, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT COUNT(DISTINCT ip) counthits
+			FROM wp_slim_stats
+			WHERE ip IS NOT NULL AND 1=1 AND dt BETWEEN 1501072727 AND 1503664727 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_overview_summary, wp_slimstat_db::count_records, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT ip, ip, dt
+			FROM wp_slim_stats
+			WHERE ip IS NOT NULL AND dt_out > 1503664428 OR dt > 1503664428 AND dt BETWEEN 1501072727 AND 1503664727
+			ORDER BY dt DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_recent, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'username' in 'field list' for query 
+			SELECT username, COUNT(*) counthits
+			FROM wp_slim_stats
+			WHERE username IS NOT NULL AND 1=1 AND dt BETWEEN 1501072727 AND 1503664727
+			GROUP BY username 
+			ORDER BY counthits DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'username' in 'field list' for query 
+			SELECT username, ip, dt
+			FROM wp_slim_stats
+			WHERE username IS NOT NULL AND dt_out > 1503664428 OR dt > 1503664428 AND dt BETWEEN 1501072727 AND 1503664727
+			ORDER BY dt DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_recent, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'browser_type' in 'where clause' for query 
+			SELECT COUNT(id) counthits
+			FROM wp_slim_stats
+			WHERE visit_id > 0 AND browser_type <> 1 AND dt BETWEEN 1501072727 AND 1503664727 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::count_records, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT COUNT(*) counthits FROM (
+				SELECT ip
+				FROM wp_slim_stats
+				WHERE ip IS NOT NULL AND visit_id > 0 AND browser_type <> 1 AND dt BETWEEN 1501072727 AND 1503664727
+				GROUP BY ip
+				HAVING COUNT(visit_id) = 1
+			) AS ts1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::count_records_having, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT AVG(ts1.counthits) AS avghits, MAX(ts1.counthits) AS maxhits FROM (
+				SELECT count(ip) counthits, visit_id
+				FROM wp_slim_stats
+				WHERE visit_id > 0 AND dt BETWEEN 1501072727 AND 1503664727
+				GROUP BY visit_id
+			) AS ts1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::get_max_and_average_pages_per_visit, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'browser_type' in 'where clause' for query 
+			SELECT COUNT(DISTINCT visit_id) counthits
+			FROM wp_slim_stats
+			WHERE visit_id <> 0 AND visit_id > 0 AND browser_type <> 1 AND dt BETWEEN 1501072727 AND 1503664727 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::count_records, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT COUNT(DISTINCT ip) counthits
+			FROM wp_slim_stats
+			WHERE ip IS NOT NULL AND visit_id > 0 AND browser_type <> 1 AND dt BETWEEN 1501072727 AND 1503664727 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::count_records, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'username' in 'field list' for query 
+			SELECT COUNT(DISTINCT username) counthits
+			FROM wp_slim_stats
+			WHERE username IS NOT NULL AND 1=1 AND dt BETWEEN 1501072727 AND 1503664727 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::count_records, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'browser_type' in 'where clause' for query 
+			SELECT COUNT(id) counthits
+			FROM wp_slim_stats
+			WHERE browser_type = 1 AND dt BETWEEN 1501072727 AND 1503664727 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::count_records, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'browser' in 'field list' for query 
+			SELECT browser, browser_version, COUNT(*) counthits
+			FROM wp_slim_stats
+			WHERE 1=1 AND dt BETWEEN 1501072727 AND 1503664727
+			GROUP BY browser, browser_version 
+			ORDER BY counthits DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'screen_width' in 'field list' for query 
+			SELECT screen_width, screen_height, COUNT(*) counthits
+			FROM wp_slim_stats
+			WHERE screen_width <> 0 AND screen_height <> 0 AND dt BETWEEN 1501072727 AND 1503664727
+			GROUP BY screen_width, screen_height 
+			ORDER BY counthits DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'username' in 'field list' for query 
+			SELECT username, COUNT(*) counthits
+			FROM wp_slim_stats
+			WHERE username IS NOT NULL AND notes LIKE "%user:%" AND dt BETWEEN 1501072727 AND 1503664727
+			GROUP BY username 
+			ORDER BY counthits DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'category' in 'field list' for query 
+			SELECT category, COUNT(*) counthits
+			FROM wp_slim_stats
+			WHERE category IS NOT NULL AND content_type LIKE "%category%" AND dt BETWEEN 1501072727 AND 1503664727
+			GROUP BY category 
+			ORDER BY counthits DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'author' in 'field list' for query 
+			SELECT author, COUNT(*) counthits
+			FROM wp_slim_stats
+			WHERE author IS NOT NULL AND 1=1 AND dt BETWEEN 1501072727 AND 1503664727
+			GROUP BY author 
+			ORDER BY counthits DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:48 UTC] WordPress database error Unknown column 'outbound_resource' in 'field list' for query 
+			SELECT outbound_resource, ip, dt
+			FROM wp_slim_stats
+			WHERE outbound_resource IS NOT NULL AND 1=1 AND dt BETWEEN 1501072727 AND 1503664727
+			ORDER BY dt DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top_outbound, wp_slimstat_db::get_recent, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT id, ip, other_ip, username, country, referer, resource, searchterms, plugins, notes, visit_id, server_latency, page_performance, browser, browser_version, browser_type, platform, language, user_agent, resolution, screen_width, screen_height, content_type, category, author, content_id, outbound_resource, dt_out, dt
+			FROM wp_slim_stats
+			WHERE 1=1 AND dt BETWEEN 1501072735 AND 1503664735
+			ORDER BY dt DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::show_activity_log, include('/plugins/wp-slimstat/admin/view/right-now.php'), wp_slimstat_db::get_recent, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT dt, COUNT( ip ) first_metric, COUNT( DISTINCT ip ) second_metric
+			FROM wp_slim_stats
+			WHERE 1=1 AND dt BETWEEN 1501072735 AND 1503664735 
+			GROUP BY MONTH(CONVERT_TZ(FROM_UNIXTIME(dt), @@session.time_zone, '+00:00')), DAY(CONVERT_TZ(FROM_UNIXTIME(dt), @@session.time_zone, '+00:00')) made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::show_chart, wp_slimstat_db::get_data_for_chart, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT COUNT(DISTINCT ip) counthits
+			FROM wp_slim_stats
+			WHERE ip IS NOT NULL AND 1=1 AND dt BETWEEN 1501072735 AND 1503664735 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_overview_summary, wp_slimstat_db::count_records, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT ip, ip, dt
+			FROM wp_slim_stats
+			WHERE ip IS NOT NULL AND dt_out > 1503664435 OR dt > 1503664435 AND dt BETWEEN 1501072735 AND 1503664735
+			ORDER BY dt DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_recent, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'username' in 'field list' for query 
+			SELECT username, COUNT(*) counthits
+			FROM wp_slim_stats
+			WHERE username IS NOT NULL AND 1=1 AND dt BETWEEN 1501072735 AND 1503664735
+			GROUP BY username 
+			ORDER BY counthits DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'username' in 'field list' for query 
+			SELECT username, ip, dt
+			FROM wp_slim_stats
+			WHERE username IS NOT NULL AND dt_out > 1503664435 OR dt > 1503664435 AND dt BETWEEN 1501072735 AND 1503664735
+			ORDER BY dt DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_recent, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'browser_type' in 'where clause' for query 
+			SELECT COUNT(id) counthits
+			FROM wp_slim_stats
+			WHERE visit_id > 0 AND browser_type <> 1 AND dt BETWEEN 1501072735 AND 1503664735 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::count_records, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT COUNT(*) counthits FROM (
+				SELECT ip
+				FROM wp_slim_stats
+				WHERE ip IS NOT NULL AND visit_id > 0 AND browser_type <> 1 AND dt BETWEEN 1501072735 AND 1503664735
+				GROUP BY ip
+				HAVING COUNT(visit_id) = 1
+			) AS ts1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::count_records_having, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT AVG(ts1.counthits) AS avghits, MAX(ts1.counthits) AS maxhits FROM (
+				SELECT count(ip) counthits, visit_id
+				FROM wp_slim_stats
+				WHERE visit_id > 0 AND dt BETWEEN 1501072735 AND 1503664735
+				GROUP BY visit_id
+			) AS ts1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::get_max_and_average_pages_per_visit, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'browser_type' in 'where clause' for query 
+			SELECT COUNT(DISTINCT visit_id) counthits
+			FROM wp_slim_stats
+			WHERE visit_id <> 0 AND visit_id > 0 AND browser_type <> 1 AND dt BETWEEN 1501072735 AND 1503664735 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::count_records, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'ip' in 'field list' for query 
+			SELECT COUNT(DISTINCT ip) counthits
+			FROM wp_slim_stats
+			WHERE ip IS NOT NULL AND visit_id > 0 AND browser_type <> 1 AND dt BETWEEN 1501072735 AND 1503664735 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::count_records, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'username' in 'field list' for query 
+			SELECT COUNT(DISTINCT username) counthits
+			FROM wp_slim_stats
+			WHERE username IS NOT NULL AND 1=1 AND dt BETWEEN 1501072735 AND 1503664735 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::count_records, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'browser_type' in 'where clause' for query 
+			SELECT COUNT(id) counthits
+			FROM wp_slim_stats
+			WHERE browser_type = 1 AND dt BETWEEN 1501072735 AND 1503664735 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_reports::get_visitors_summary, wp_slimstat_db::count_records, wp_slimstat_db::get_var
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'browser' in 'field list' for query 
+			SELECT browser, browser_version, COUNT(*) counthits
+			FROM wp_slim_stats
+			WHERE 1=1 AND dt BETWEEN 1501072735 AND 1503664735
+			GROUP BY browser, browser_version 
+			ORDER BY counthits DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'screen_width' in 'field list' for query 
+			SELECT screen_width, screen_height, COUNT(*) counthits
+			FROM wp_slim_stats
+			WHERE screen_width <> 0 AND screen_height <> 0 AND dt BETWEEN 1501072735 AND 1503664735
+			GROUP BY screen_width, screen_height 
+			ORDER BY counthits DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'username' in 'field list' for query 
+			SELECT username, COUNT(*) counthits
+			FROM wp_slim_stats
+			WHERE username IS NOT NULL AND notes LIKE "%user:%" AND dt BETWEEN 1501072735 AND 1503664735
+			GROUP BY username 
+			ORDER BY counthits DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'category' in 'field list' for query 
+			SELECT category, COUNT(*) counthits
+			FROM wp_slim_stats
+			WHERE category IS NOT NULL AND content_type LIKE "%category%" AND dt BETWEEN 1501072735 AND 1503664735
+			GROUP BY category 
+			ORDER BY counthits DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'author' in 'field list' for query 
+			SELECT author, COUNT(*) counthits
+			FROM wp_slim_stats
+			WHERE author IS NOT NULL AND 1=1 AND dt BETWEEN 1501072735 AND 1503664735
+			GROUP BY author 
+			ORDER BY counthits DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top, wp_slimstat_db::get_results
+[25-Aug-2017 12:38:55 UTC] WordPress database error Unknown column 'outbound_resource' in 'field list' for query 
+			SELECT outbound_resource, ip, dt
+			FROM wp_slim_stats
+			WHERE outbound_resource IS NOT NULL AND 1=1 AND dt BETWEEN 1501072735 AND 1503664735
+			ORDER BY dt DESC
+			LIMIT 0, 1000 made by wp_dashboard, do_meta_boxes, call_user_func, wp_slimstat_reports::callback_wrapper, call_user_func, wp_slimstat_reports::raw_results_to_html, call_user_func, wp_slimstat_db::get_top_outbound, wp_slimstat_db::get_recent, wp_slimstat_db::get_results

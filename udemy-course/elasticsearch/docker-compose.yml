@@ -16,7 +16,8 @@ services:
             - ./data:/mylogstash/data:rw
             - ./plugin:/mylogstash/plugin:rw
         ports:
-            - "5000:5000"
+            - "5000:5000/tcp"
+            - "5000:5000/udp"
             - "8080:8080"
         tty: true
         command: ["bash"]

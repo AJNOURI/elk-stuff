@@ -7,16 +7,16 @@ services:
             - "9300:9300"
         volumes:
             - ./data:/usr/share/elasticsearch/data
-    logstash:
+    mylogstash:
         image: logstash
         volumes:
             - ./config-dir:/mylogstash/config-dir:rw
             - ./data:/mylogstash/data:rw
         ports:
-            - "5000:5000/tcp"
-            - "5001:5001/udp"
-            - "5002:5002/udp"
-            - "8080:8080"
+            - "5002:5002/tcp"
+            - "5003:5003/udp"
+            - "514:514/udp"
+            - "8080:8080/tcp"
         tty: true
         command: ["bash"]
         links:
